@@ -16,7 +16,7 @@ export default function SectionContact() {
                 pl: {xs: 0, md: 15},
                 pt: {xs: 0, md: 15},
                 mb: {xs: 5, md: 5},
-                mt: {xs: 10, md: 0},
+                mt: {xs: 0, md: 0},
                 fontSize: {xs: '3rem', md: '3.75rem'},
                 '&::after': {
                   content: '""',
