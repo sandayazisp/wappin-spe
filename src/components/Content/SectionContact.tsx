@@ -13,9 +13,11 @@ export default function SectionContact() {
             <Typography variant='h2' component='h1' fontWeight={700} color='#CFCFCF' gutterBottom
               sx={{
                 position: 'relative',
-                pl: 15,
-                pt: 15,
-                mb: 5,
+                pl: {xs: 0, md: 15},
+                pt: {xs: 0, md: 15},
+                mb: {xs: 5, md: 5},
+                mt: {xs: 10, md: 0},
+                fontSize: {xs: '3rem', md: '3.75rem'},
                 '&::after': {
                   content: '""',
                   display: 'inline-block',
@@ -34,8 +36,8 @@ export default function SectionContact() {
               Contact
               </Typography>
               <Box>
-                <Grid container spacing={10}>
-                  <Grid xs={6}
+                <Grid container spacing={{xs:0, md:12}}>
+                  <Grid xs={12} md={6} order={{xs: 2, md: 1}}
                     sx={{
                       zIndex: 1,
                     }}
@@ -51,6 +53,7 @@ export default function SectionContact() {
                     <Typography variant='h6' component='p' gutterBottom
                       sx={{
                         fontWeight: 700,
+                        fontSize: {xs: '1.3rem', md: '2rem'},
                       }}
                     >
                       Our HQ
@@ -73,15 +76,20 @@ export default function SectionContact() {
                       info@wappin.id
                     </Typography>
                   </Grid>
-                  <Grid xs={6}
+                  <Grid xs={12} md={6} order={{xs: 1, md: 2}}
                     sx={{
                         zIndex: 1,
+                        mb: {xs: 5, md: 0},
                     }}
                   >
                     <Box
                         
                     >
-                        <Typography variant="h4" component="h2" align="center" mb={3}>
+                        <Typography variant="h4" component="h2" align="center" mb={3}
+                            sx={{
+                              fontSize: {xs: '1.5rem', md: '2.5rem'},
+                            }}
+                        >
                             Request For Demo
                         </Typography>
                         <form >
@@ -130,13 +138,13 @@ export default function SectionContact() {
                                 sx={{
                                     backgroundColor: '#0cebeb',
                                     backgroundImage: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
-                                    mt: 4,
+                                    mt: {xs: 3, md: 4},
                                     fontSize: '1rem',
                                     fontWeight: '500',
                                     textTransform: 'capitalize',
                                     color: 'common.white',
                                     padding: '10px 0',
-                                    minWidth: '170px',
+                                    minWidth: {xs: '100%', md: '170px'},
                                 }}
                             >Submit</Button>
                         </form>
