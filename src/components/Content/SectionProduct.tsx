@@ -1,4 +1,5 @@
 import { Box, Button, Container, Typography } from '@mui/material'
+import Image from 'next/legacy/image'
 export default function SectionProduct() {
     return(
         <Container
@@ -13,17 +14,18 @@ export default function SectionProduct() {
                 display: 'flex',
                 justifyContent: 'center',
                 position: 'relative',
+                flexDirection: {xs: 'column', md: 'row'},
                 
               }}
             >
                <Typography variant='h2' component='h1' fontWeight={700} color='#CFCFCF'
-              sx={{
-                
-                position: 'absolute',
+              sx={{              
+                position: {xs: 'relative', md: 'absolute'},
                 top: 0,
                 left: 0,
-                pl: 20,
-                pt: 10,
+                pl: {xs: 0, md: 20},
+                pt: {xs: 10, md: 10},
+                fontSize: {xs: '3rem', md: '3.75rem'},
                 '&::after': {
                   content: '""',
                   display: 'inline-block',
@@ -41,26 +43,43 @@ export default function SectionProduct() {
             >
               Product
             </Typography>
-              <img
+            <Box
+                sx={{
+                  position: 'relative',
+                  width: '100%',
+                  height: {xs: '200px', md: '800px'}, 
+                }}
+              >
+                <Image
+                  src={'/Assets/Group 177@2x.png'}
+                  alt='Wappin'
+                  objectFit='cover'
+                  layout='fill'
+                />
+              </Box>
+              {/* <img
                 src='/Assets/Group 177@2x.png'
                 alt='Wappin'
                 loading="lazy"
                 width='100%'
-              />
+              /> */}
               <Box
                 sx={{
-                  position: 'absolute',
-                  bottom: '5%',
-                  right: '10%',
+                  position: {xs: 'relative', md: 'absolute'},
+                  bottom: {xs: '0', md: '2%'},
+                  right: {xs: '0', md: '5%'},
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                   flexDirection: 'column',
                   zIndex: 1,
+                  mt: {xs: 3, md: 0},
                 }}
               >
               <Typography variant='h3' component='h3'
-                
+                sx={{
+                  fontSize: {xs: '1.5rem', md: '3rem'},
+                }}
               >
                 All Projects. One Platform.
               </Typography>
@@ -68,7 +87,7 @@ export default function SectionProduct() {
                   sx={{
                       backgroundColor: '#0cebeb',
                       backgroundImage: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
-                      mt: 4,
+                      mt: {xs: 3, md: 4},
                       fontSize: '1rem',
                       fontWeight: '500',
                       textTransform: 'capitalize',
