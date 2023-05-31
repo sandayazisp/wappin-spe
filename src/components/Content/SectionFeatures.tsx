@@ -9,6 +9,7 @@ export default function SectionFeatures() {
               width: '100%',
               height: '100%',
               position: 'relative',
+              mt: {xs: 15, md: 0},
             }}
           >
             <Container
@@ -61,7 +62,7 @@ export default function SectionFeatures() {
                     position: 'relative',
                     width: '100%',
                     height: '100%',
-                    pt: {xs: 5, md: 15},
+                    pt: {xs: 0, md: 15},
                     pl: {xs: 0, md: 5},
                   }}
                 >
@@ -77,7 +78,6 @@ export default function SectionFeatures() {
                   >
                     <Box
                       sx={{
-                        // border: '0 1px solid #E5E5E5',
                         bgcolor: '#FDFDFD',
                         borderRadius: '10px',
                         display: 'flex',
@@ -118,7 +118,6 @@ export default function SectionFeatures() {
                   >
                     <Box
                       sx={{
-                        // border: '0 1px solid #E5E5E5',
                         bgcolor: '#FDFDFD',
                         borderRadius: '10px',
                         display: 'flex',
@@ -158,7 +157,6 @@ export default function SectionFeatures() {
                   >
                     <Box
                       sx={{
-                        // border: '0 1px solid #E5E5E5',
                         width: {xs: '70%', md: '60%'},
                         bgcolor: '#FDFDFD',
                         borderRadius: '10px',
@@ -199,7 +197,6 @@ export default function SectionFeatures() {
                   >
                     <Box
                       sx={{
-                        // border: '0 1px solid #E5E5E5',
                         width: {xs: '70%', md: '60%'},
                         bgcolor: '#FDFDFD',
                         borderRadius: '10px',
@@ -270,7 +267,6 @@ export default function SectionFeatures() {
                     sx={{
                       width: '100%',
                       pt: 7,
-                      // backgroundColor: 'red',
                     }}
                   >
                     <Grid xs={6} md={4} 
@@ -294,13 +290,7 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/INNOVATIVE@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
+                      
                     </Grid>
                     <Grid xs={6} md={4}
                       sx={{
@@ -324,13 +314,7 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/ARITECHNO@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
+                      
                     </Grid>
                     <Grid xs={6} md={4}
                       sx={{
@@ -353,13 +337,6 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/LIQUIDROP@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
                     </Grid>
                     <Grid xs={6} md={4}
                       sx={{
@@ -383,13 +360,6 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/VISIONNER@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
                     </Grid>
                     <Grid xs={6} md={4}
                       sx={{
@@ -413,13 +383,6 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/CHATMEETING@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
                     </Grid>
                     <Grid xs={6} md={4}
                       sx={{
@@ -443,13 +406,6 @@ export default function SectionFeatures() {
                           layout='fill'
                         />
                       </Box>
-                      {/* <img
-                        src='/Assets/DIAMONDO@2x.png'
-                        alt='Wappin'
-                        loading="lazy"
-                        width='20%'
-                        
-                      /> */}
                     </Grid>
                   </Grid>
                 </Box>
