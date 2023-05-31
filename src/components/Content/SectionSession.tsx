@@ -8,26 +8,35 @@ export default function SectionSession() {
               width: '100%',
               position: 'relative',
               mt: 10,
-              height: '700px',
-              
+              height: '700px',    
+              display: { xs: 'none', md: 'block'},        
             }}
           >
-              <Image
-                src={'/Assets/Group 179@2x.png'}
-                alt='Wappin'
-                objectFit='cover'
-                layout='fill'
-              />
+              <Box
+                sx={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '100%',
+                }}
+              >
+                <Image
+                  src={'/Assets/Group 179@2x.png'}
+                  alt='Wappin'
+                  objectFit='cover'
+                  layout='fill'
+                  objectPosition={'right'}
+                />
               <Box
                 sx={{
                   zIndex: 1,
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'center',
+                  justifyContent: { xs: 'end', md: 'center'},
                   alignItems: 'center',
                   position: 'relative',
-                  width: '50%',
+                  width: { xs: '100%', md: '50%'},
                   height: '100%',
+                  textAlign: { xs: 'center', md: 'left'}
                 }}
               >
               <Typography variant='h3' component='h1' 
@@ -50,6 +59,7 @@ export default function SectionSession() {
                       minWidth: '170px',
                   }}
               >Try Now</Button>
+              </Box>
               </Box>
           </Box>
     )
