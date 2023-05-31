@@ -4,6 +4,7 @@ import SectionFeatures from '@/components/Content/SectionFeatures'
 import SectionProduct from '@/components/Content/SectionProduct'
 import SectionSession from '@/components/Content/SectionSession'
 import SectionWappin from '@/components/Content/SectionWappin'
+import Footer from '@/components/Layout/Footer'
 import Header from '@/components/Layout/Header'
 import { Box } from '@mui/material'
 
@@ -17,7 +18,6 @@ export default function Home() {
             position: 'relative',
           }}
         >
-         
 
           {/* Content Wappin Start */}
            <SectionWappin />
@@ -40,6 +40,7 @@ export default function Home() {
           {/* Content Contact End */}
         </Box>
       </main>
+      <Footer />
     </>
   )
 }
