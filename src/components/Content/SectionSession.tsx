@@ -9,7 +9,7 @@ export default function SectionSession() {
               position: 'relative',
               mt: 10,
               height: '700px',    
-              display: { xs: 'none', md: 'block'},        
+              display: { xs: 'none', lg: 'block'},        
             }}
           >
               <Box
@@ -17,6 +17,8 @@ export default function SectionSession() {
                   position: 'relative',
                   width: '100%',
                   height: '100%',
+                  // objectPosition: 'left',
+                  // objectFit: 'cover',
                 }}
               >
                 <Image
@@ -24,7 +26,7 @@ export default function SectionSession() {
                   alt='Wappin'
                   objectFit='cover'
                   layout='fill'
-                  objectPosition={'right'}
+                  objectPosition={'center'}
                 />
               <Box
                 sx={{
