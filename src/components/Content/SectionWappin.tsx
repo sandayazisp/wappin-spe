@@ -13,7 +13,7 @@ export default function SectionWappin() {
               // bgcolor: 'red',
               border: '1px solid #E5E5E5',
               height: '100%',
-              minHeight: {xs: '1700px', md: '1550px'},
+              minHeight: {xs: '1650px', sm:'1600px', md: '1500px'},
               position: 'relative',
               top: -50,
               boxShadow: '-1px 9px 14px 4px rgba(0,0,0,0.06)',
@@ -34,13 +34,19 @@ export default function SectionWappin() {
               width: '100%',
             }}
           >
-            <Image 
-              src='/Assets/Wapp line2@2x.png'
-              height={100}
-              width={500}
-              layout='responsive'
-              alt='Wappin'
-            />
+            <Box
+              sx={{
+                position: 'relative',
+                height: {xs: '65px', sm: '110px', md: '170px', lg: '220px', xl: '250px'},
+                width: 'auto',
+              }}            
+            >
+              <Image 
+                src='/Assets/Wapp line2@2x.png'
+                layout='fill'
+                alt='Wappin'
+              />
+            </Box>
           <Grid container
             sx={{
               mt: 10,
@@ -49,11 +55,11 @@ export default function SectionWappin() {
             <Grid xs={12} md={6.5} >
               <Box 
                 sx={{
-                  objectPosition: {xs: 'center', md: 'left'}, 
-                  marginLeft: {xs: 0, md: '-110px'},
+                  objectPosition: {xs: 'center', md: 'right'}, 
+                  marginLeft: {xs: 0, sm:'-50px', md: '0', xl: '-90px'},
                   position: 'relative',
                   width: '100%',
-                  height: {xs: '200px', md: '400px'},
+                  height: {xs: '200px', md: '100%'},
                 }}
               >
                 <Image 
@@ -64,6 +70,7 @@ export default function SectionWappin() {
                 />
               </Box>
             </Grid>
+
             <Grid xs={12} md={5.5} 
               sx={{
                 borderRight: {xs: 'none', md: '20px solid'},
@@ -72,8 +79,8 @@ export default function SectionWappin() {
                 flexDirection: 'column',
                 justifyContent: 'start',
                 alignItems: {xs: 'center', md: 'start'},
-                pt: {xs: 3, md: 8},
-                pl: {xs: 0, md: 15},
+                pt: {xs: 3, lg: 8},
+                pl: {xs: 0, md:6, lg: 15},
               }}
             >
               <Typography variant='body1' component='p'
@@ -110,21 +117,21 @@ export default function SectionWappin() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: {xs: 'center', md: 'end'},
-                pr: {xs: 0, md: 15},
+                alignItems: {xs: 'center', lg: 'end'},
+                pr: {xs: 0, lg: 15},
                 
               }}
             >
               <Box
                 sx={{
                   display: 'flex',
-                  justifyContent: {xs: 'center', md: 'end'},
+                  justifyContent: {xs: 'center', md: 'center'},
                   alignItems: 'center',
-                  width: '100%',
-                  maxWidth: {xs: '70%', md: '50%'},
-                  height: '75px',
+                  // width: '100%',
+                  maxWidth: {xs: '70%', md: '70%'},
+                  // height: '75px',
                   position: 'relative',
-                  mr: {xs: 0, md: 18},
+                  mr: {xs: 0, md: 0},
                   mb: {xs: 5, md: 5},
                   mt: {xs: 5, md: 0},
                 }}
@@ -133,7 +140,9 @@ export default function SectionWappin() {
                 <Image
                   src='/Assets/02_@2x.png'
                   alt="Logo Wappin"
-                  layout='fill'
+                  layout='intrinsic'
+                  width={424}
+                  height={88}
                 />
 
               </Box>
