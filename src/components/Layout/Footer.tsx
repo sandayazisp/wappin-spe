@@ -4,6 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Box, Container, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
+import Image from 'next/legacy/image';
 
 export default function Footer() {
     return(
@@ -44,7 +45,7 @@ export default function Footer() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                flexDirection: {xs: 'column', md: 'row'},
+                                flexDirection: {xs: 'column', lg: 'row'},
                             }}
                         >
                             <Box
@@ -52,19 +53,22 @@ export default function Footer() {
                                     display: {xs: 'none', md: 'block'},
                                 }}
                             >
-                                <img
+                                <Image 
                                     src='/Assets/Mask Group 8@2x.png'
                                     alt='Wappin'
                                     loading="lazy"
-                                    width='80px'
+                                    width={136}
+                                    height={82}
+                                    layout='fixed'
                                 />
                             </Box>
                             <Typography variant="body1" component='p'
                                 sx={{
                                     ml: {xs: 0, md: 2},
-                                    mt: {xs: 2, md: 0},
-                                    textAlign: {xs: 'center', md: 'left'},
+                                    mt: {xs: 2, lg: 0},
+                                    textAlign: {xs: 'center', lg: 'left'},
                                     fontSize: {xs: '0.85rem', md: '1rem'},
+                                    fontWeight: '500',
                                 }}
                             >
                                 &copy; 2019 Copyright by Wappin. All Right Reserved
@@ -89,7 +93,7 @@ export default function Footer() {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     fontSize: '1rem',
-                                    flexDirection: {xs: 'column', md: 'row'},
+                                    flexDirection: {xs: 'column', lg: 'row'},
                                 
                                 }}
                                 >
@@ -110,11 +114,10 @@ export default function Footer() {
                                         </Box>
                                     <Typography variant="body1" component='p'
                                         sx={{
-                                            mr: {xs: 0, md: 2},
                                             borderBottom: {xs: '1px solid #fff', md: 'none'},
                                             width: {xs: '100%', md: 'auto'},
                                             textAlign: {xs: 'center', md: 'left'},
-                                            mb: {xs: 2, md: 0},
+                                            mb: {xs: 2, lg: 0},
                                             py: {xs: 2, md: 0},
                                         }}
                                     >
@@ -137,7 +140,7 @@ export default function Footer() {
                                                 mr: {xs: 3,},
                                             }}
                                         >
-                                            <FacebookIcon fontSize='large'  />
+                                            <InstagramIcon fontSize='large' sx={{fontSize: '3rem'}}  />
                                         </Typography>
                                         <Typography variant='body1' component='a' href='#sdf'
                                             sx={{
@@ -147,7 +150,7 @@ export default function Footer() {
                                                 color: 'common.white',
                                             }}
                                         >
-                                            <InstagramIcon fontSize='large' />
+                                            <FacebookIcon fontSize='large'  sx={{fontSize: '3rem'}}  />
                                         </Typography>
                                         <Typography variant='body1' component='a' href='#sdf'
                                             sx={{
@@ -158,7 +161,7 @@ export default function Footer() {
                                                 mx: 3,
                                             }}
                                         >
-                                            <TwitterIcon fontSize='large' />
+                                            <TwitterIcon fontSize='large' sx={{fontSize: '3rem'}}  />
                                         </Typography>
                                         <Typography variant='body1' component='a' href='#sdf'
                                             sx={{
@@ -168,7 +171,7 @@ export default function Footer() {
                                                 color: 'common.white',
                                             }}
                                         >
-                                            <GoogleIcon fontSize='large' />
+                                            <GoogleIcon fontSize='large' sx={{fontSize: '3rem'}}  />
                                         </Typography>
                                     </Box>
                             </Box>
