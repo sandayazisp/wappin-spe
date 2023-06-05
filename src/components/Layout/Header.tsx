@@ -4,22 +4,36 @@ import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/legacy/image';
-import * as React from 'react';
+import { useEffect, useState } from "react";
 import TemporaryDrawer from './Sidebar';
 
 const pages = ['Home', 'Product', 'Features', 'Contact'];
 
 export default function Header() {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+
+    // const classes = useStyles();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 15;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
     return (
         <Box>
-            <AppBar position="fixed" 
+            <AppBar position="fixed"
                 sx={{
-                    backgroundColor: 'rgba(53,53,53,0.7)',
-                    py: '1.3rem'
+                    backgroundColor: {xs: `${scrolled ? 'common.black' : 'rgba(53,53,53,0.5)'}`, md: 'rgba(53,53,53,0.7)'},
+                    py: '1.3rem',
+                    transition: 'background-color 0.5s ease',
+                    
                 }}
                 elevation={0}
             >
@@ -51,7 +65,6 @@ export default function Header() {
                             {pages.map((page) => (
                                 <Button
                                     key={page}
-                                    onClick={handleCloseNavMenu}
                                     sx={{ my: 2, mx: 3, color: 'white', display: 'block', textTransform: 'capitalize', fontSize: '1rem' }}
                                 >
                                     {page}
@@ -112,15 +125,15 @@ export default function Header() {
                 <Container maxWidth="xl"
                     sx={{
                         display: 'flex',
-                        alignItems: 'end',
-                        justifyContent: 'end',
+                        alignItems: {xs: 'center', lg:'end'},
+                        justifyContent: {xs: 'center', lg:'end'},
                     }}
                 >
                     <Box
                         sx={{
                             position: 'relative',
                             zIndex: 1,
-                            width: '500px',
+                            width: {xs: '100%', md: '80%', lg: '500px'},
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: {xs: 'center', md: 'start'},   

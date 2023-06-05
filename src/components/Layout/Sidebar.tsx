@@ -5,9 +5,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import LoginIcon from '@mui/icons-material/Login';
 import MenuIcon from '@mui/icons-material/Menu';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
-import { IconButton } from '@mui/material';
+import { Divider, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -41,7 +40,7 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-        sx={{ width: 230 }}
+      sx={{ width: 230}}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -51,23 +50,24 @@ export default function TemporaryDrawer() {
           <ListItem key={text} disablePadding>
             <ListItemButton component="a" href={`#${text.toLowerCase()}`}>
               <ListItemIcon>
-              {index === 0 && <HomeIcon />}
-              {index === 1 && <ProductionQuantityLimitsIcon />}
-              {index === 2 && <AssessmentIcon />}
-              {index === 3 && <ContactsIcon />} 
+              {index === 0 && <HomeIcon sx={{color: 'common.white'}} />}
+              {index === 1 && <ProductionQuantityLimitsIcon sx={{color: 'common.white'}} />}
+              {index === 2 && <AssessmentIcon sx={{color: 'common.white'}} />}
+              {index === 3 && <ContactsIcon sx={{color: 'common.white'}} />} 
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-      <Divider />
-      <List>
+      <Divider sx={{backgroundColor: 'common.white'}} />
+      <List
+      >
         {['Register', 'Login'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton component="a" href={`{text}`}>
               <ListItemIcon>
-                {index % 2 === 0 ? <AccountCircleIcon /> : <LoginIcon />}
+                {index % 2 === 0 ? <AccountCircleIcon sx={{color: 'common.white'}} /> : <LoginIcon sx={{color: 'common.white'}} />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -78,7 +78,9 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <Box>
+    <Box
+    
+    >
       <IconButton onClick={toggleDrawer('right', true)}
       size="large"
       aria-label="account of current user"
@@ -92,8 +94,18 @@ export default function TemporaryDrawer() {
         anchor={'right'}
         open={state['right']}
         onClose={toggleDrawer('right', false)}
+        
       >
-        {list('right')}
+        <Box
+        sx={{
+          backgroundColor: 'common.black',
+          height: '100%',
+          color: 'common.white',
+        }}
+        >
+          {list('right')}
+
+        </Box>
       </Drawer>
     </Box>
   );
