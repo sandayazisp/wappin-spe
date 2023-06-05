@@ -1,4 +1,4 @@
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 
@@ -7,13 +7,13 @@ export default function SectionContact() {
         <Container
             sx={{
               width: '100%',
-              maxWidth: {xs: '100%', md: '90%'},
+              maxWidth: {xs: '90%', md: '90%'},
             }}
           >
             <Typography variant='h2' component='h1' fontWeight={700} color='#CFCFCF' gutterBottom
               sx={{
                 position: 'relative',
-                pl: {xs: 0, md: 15},
+                pl: {xs: 0, lg: 15},
                 pt: {xs: 0, md: 15},
                 mb: {xs: 5, md: 5},
                 mt: {xs: 0, md: 0},
@@ -23,9 +23,9 @@ export default function SectionContact() {
                   display: 'inline-block',
                   position: 'relative',
                   top: '-40px', 
-                  left: '23px',
-                  width: '35px',
-                  height: '35px',
+                  left: {xs: '0', md: '23px'},
+                  width: {xs: '25px', md: '35px'},
+                  height: {xs: '25px', md: '35px'},
                   borderRadius: '50%',
                   backgroundColor: '#25D366',
                   border: '1px solid #CFCFCF',
@@ -36,7 +36,7 @@ export default function SectionContact() {
               Contact
               </Typography>
               <Box>
-                <Grid container spacing={{xs:0, md:12}}>
+                <Grid container spacing={{xs:0, md:5, lg:12}}>
                   <Grid xs={12} md={6} order={{xs: 2, md: 1}}
                     sx={{
                       zIndex: 1,
@@ -53,12 +53,11 @@ export default function SectionContact() {
                     <Typography variant='h6' component='p' gutterBottom
                       sx={{
                         fontWeight: 700,
-                        fontSize: {xs: '1.3rem', md: '2rem'},
                       }}
                     >
                       Our HQ
                     </Typography>
-                    <Typography variant='body1' component='p'>
+                    <Typography variant='body1' component='p' sx={{width: {xs: '100%', md: '90%', lg: '50%'}}}>
                     Ruko Great Wall, Jl. Green Lake City Boulevard No.17-20, RT.005/RW.008, Petir, Kec. Cipondoh, Kota Tangerang, Banten 15147
                     </Typography>
                     <Typography variant='body1' component='p'
@@ -93,52 +92,79 @@ export default function SectionContact() {
                             Request For Demo
                         </Typography>
                         <form >
-                            <label htmlFor="name">Name</label>
-                            <TextField
-                            name="name"
-                            type="name"
-                            fullWidth
-                            margin="normal"
-                            required
-                            />
-                            <label htmlFor="email">Email Address</label>
-                            <TextField
-                            name="email"
-                            type="email"
-                            fullWidth
-                            margin="normal"
-                            required
-                            />
-                            <label htmlFor="phone">Phone</label>
-                            <TextField
-                            name="phone"
-                            type="phone"
-                            fullWidth
-                            margin="normal"
-                            required
-                            />
-                            <label htmlFor="company">Company</label>
-                            <TextField
-                            name="company"
-                            type="company"
-                            fullWidth
-                            margin="normal"
-                            required
-                            />
-                            <label htmlFor="message">Message</label>
-                            <TextField
-                            label="Message"
-                            name="message"
-                            multiline
-                            rows={4}
-                            fullWidth
-                            margin="normal"
-                            />
+                          <Stack spacing={5}>
+                            <Box>
+                              <label htmlFor="name">Name</label>
+                              <TextField
+                              name="name"
+                              type="name"
+                              fullWidth
+                              variant="outlined"
+                              size="small"
+                              margin="none"
+                              required
+                              sx={{mt: 1}}
+                              />
+                            </Box>
+                            <Box>
+                              <label htmlFor="email">Email Address</label>
+                              <TextField
+                              name="email"
+                              type="email"
+                              fullWidth
+                              variant="outlined"
+                              size="small"
+                              margin="none"
+                              required
+                              sx={{mt: 1}}
+                              />
+                            </Box>
+                            <Box>
+                              <label htmlFor="phone">Phone</label>
+                              <TextField
+                              name="phone"
+                              type="phone"
+                              fullWidth
+                              variant="outlined"
+                              size="small"
+                              margin="none"
+                              required
+                              sx={{mt: 1}}
+                              />
+                            </Box>
+                            <Box>
+                              <label htmlFor="company">Company</label>
+                              <TextField
+                              name="company"
+                              type="company"
+                              fullWidth
+                              variant="outlined"
+                              size="small"
+                              margin="none"
+                              required
+                              sx={{mt: 1}}
+                              />
+                            </Box>
+                            <Box>
+                              <label htmlFor="message">Message</label>
+                              <TextField
+                              label="Message"
+                              name="message"
+                              multiline
+                              rows={4}
+                              fullWidth
+                              variant="outlined"
+                              size="small"
+                              margin="none"
+                              sx={{mt: 1}}
+                              />
+                            </Box>
+                          </Stack>
                             <Button variant="contained" type='submit'
                                 sx={{
                                     backgroundColor: '#0cebeb',
                                     backgroundImage: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
-                                    mt: {xs: 3, md: 4},
+                                    mt: {xs: 3, md: 5},
                                     fontSize: '1rem',
                                     fontWeight: '500',
                                     textTransform: 'capitalize',
@@ -147,6 +173,7 @@ export default function SectionContact() {
                                     minWidth: {xs: '100%', md: '170px'},
                                 }}
                             >Submit</Button>
+                            
                         </form>
                     </Box>
                   </Grid>
