@@ -23,7 +23,7 @@ export default function SectionFeatures() {
               <Typography variant='h2' component='h1' fontWeight={700} color='#CFCFCF' gutterBottom
               sx={{
                 position: 'relative',
-                pl: {xs: 0, md: 20},
+                pl: {xs: 0, lg: 20},
                 pt: {xs: 0, md: 10},
                 mb: 5,
                 fontSize: {xs: '3rem', md: '3.75rem'},
@@ -32,9 +32,9 @@ export default function SectionFeatures() {
                   display: 'inline-block',
                   position: 'relative',
                   top: '-40px', 
-                  left: '23px',
-                  width: '35px',
-                  height: '35px',
+                  left: {xs: '0', md: '23px'},
+                  width: {xs: '25px', md: '35px'},
+                  height: {xs: '25px', md: '35px'},
                   borderRadius: '50%',
                   backgroundColor: '#25D366',
                   border: '1px solid #CFCFCF',
@@ -66,9 +66,9 @@ export default function SectionFeatures() {
                     pl: {xs: 0, md: 5},
                   }}
                 >
-                  <Grid container spacing={0} 
+                  <Grid container spacing={0} rowSpacing={{xs: 0, md: 10}}  
                 >
-                  <Grid xs={12} md={3} 
+                  <Grid xs={12} md={6} lg={3} 
                     sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -107,7 +107,7 @@ export default function SectionFeatures() {
                       </Typography>
                     </Box> 
                   </Grid>
-                  <Grid xs={12} md={3} 
+                  <Grid xs={12} md={6} lg={3} 
                     sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -147,7 +147,7 @@ export default function SectionFeatures() {
                       </Typography>
                     </Box> 
                   </Grid>
-                  <Grid xs={12} md={3}
+                  <Grid xs={12} md={6} lg={3}
                     sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -186,7 +186,7 @@ export default function SectionFeatures() {
                       </Typography>
                     </Box> 
                   </Grid>
-                  <Grid xs={12} md={3} 
+                  <Grid xs={12} md={6} lg={3} 
                     sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -232,7 +232,7 @@ export default function SectionFeatures() {
                 <Typography variant='h2' component='h1' fontWeight={700} color='#CFCFCF' gutterBottom
                 sx={{
                   position: 'relative',
-                  pl: {xs: 0, md: 15},
+                  pl: {xs: 0, lg: 15},
                   pt: {xs: 0, md: 15},
                   mb: {xs: 5, md: 5},
                   mt: {xs: 15, md: 0},
@@ -242,9 +242,9 @@ export default function SectionFeatures() {
                     display: 'inline-block',
                     position: 'relative',
                     top: '-40px', 
-                    left: '23px',
-                    width: '35px',
-                    height: '35px',
+                    left: {xs: '0', md: '23px'},
+                    width: {xs: '25px', md: '35px'},
+                    height: {xs: '25px', md: '35px'},
                     borderRadius: '50%',
                     backgroundColor: '#25D366',
                     border: '1px solid #CFCFCF',
@@ -275,13 +275,16 @@ export default function SectionFeatures() {
                         justifyContent: 'center',
                         alignItems: 'center',
                         zIndex: 1,
+                        // width: '100%',
+                        // height: '100%',
                         }}
                     >
                       <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
+                          // zIndex: 3,
                         }}
                       >
                         <Image 
@@ -304,13 +307,17 @@ export default function SectionFeatures() {
                       <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          // width: {xs: '100%', md: '40%'},
+                          // height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
                         }}
                       >
                         <Image 
                           src='/Assets/ARITECHNO@2x.png'
                           alt='Wappin'
+                          // width={190}
+                          // height={155}
                           layout='fill'
                         />
                       </Box>
@@ -327,13 +334,15 @@ export default function SectionFeatures() {
                        <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          // width: {xs: '100%', md: '40%'},
+                          // height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
                         }}
                       >
                         <Image 
                           src='/Assets/LIQUIDROP@2x.png'
-                          alt='Wappin'
+                          alt='Wappin'                          
                           layout='fill'
                         />
                       </Box>
@@ -350,8 +359,10 @@ export default function SectionFeatures() {
                        <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          // width: {xs: '100%', md: '40%'},
+                          // height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
                         }}
                       >
                         <Image 
@@ -373,8 +384,10 @@ export default function SectionFeatures() {
                        <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          // width: {xs: '100%', md: '40%'},
+                          // height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
                         }}
                       >
                         <Image 
@@ -396,8 +409,10 @@ export default function SectionFeatures() {
                        <Box
                         sx={{
                           position: 'relative',
-                          width: {xs: '100%', md: '40%'},
-                          height: {xs: '80px', md: '100px'},
+                          // width: {xs: '100%', md: '40%'},
+                          // height: {xs: '80px', md: '100px'},
+                          width: {xs: '110px', md: '190px'},
+                          height: {xs: '78px', md: '155px'},
                         }}
                       >
                         <Image 
@@ -416,9 +431,10 @@ export default function SectionFeatures() {
                   sx={{
                     width: '100%',
                     position: 'absolute',
-                    bottom: '77px',
+                    bottom: {xs: '4%', lg: '6%', xl: '6%'},
                     left: 0,
-                    height: {xs: '20%', md: '30%'},
+                    height: '100%',
+                    maxHeight: {xs: '19%', sm:'19%', md: '28%', lg: '35%', xl: '35%'},
                   }}
                 >
                 <Image
