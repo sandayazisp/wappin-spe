@@ -1,8 +1,36 @@
 import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+import styles from './style.module.css';
+
 
 
 export default function SectionContact() {
+  const validationSchema = Yup.object({
+    name: Yup.string()
+    .required('Name is required')
+    .max(25, 'Name is too long')
+    .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field ')
+    ,
+    email: Yup.string().email('Format email tidak valid').required('Email is required').max(55, 'Email is too long'),
+    phone: Yup.string().
+    required('Phone is required')
+    .max(14, 'Phone is too long')
+    .matches(/^[0-9]+$/, 'Only numbers are allowed for this field ')
+    ,
+    company: Yup.string().required('Company is required').max(55, 'Company is too long'),
+    message: Yup.string().required('Message is required')
+    .test('no-html', 'HTML tags are not allowed', (value) => {
+      if (value) {
+        const regex = /<[^>]+>/g;
+        return !regex.test(value);
+      }
+      return true;
+    }),
+    
+  });
+    
     return(
         <Container
             sx={{
@@ -91,94 +119,121 @@ export default function SectionContact() {
                         >
                             Request For Demo
                         </Typography>
-                        <form >
-                          <Stack spacing={5}>
-                            <Box>
-                              <label htmlFor="name">Name</label>
-                              <TextField
-                              name="name"
-                              type="name"
-                              fullWidth
-                              variant="outlined"
-                              size="small"
-                              margin="none"
-                              required
-                              sx={{mt: 1}}
-                              />
-                            </Box>
-                            <Box>
-                              <label htmlFor="email">Email Address</label>
-                              <TextField
-                              name="email"
-                              type="email"
-                              fullWidth
-                              variant="outlined"
-                              size="small"
-                              margin="none"
-                              required
-                              sx={{mt: 1}}
-                              />
-                            </Box>
-                            <Box>
-                              <label htmlFor="phone">Phone</label>
-                              <TextField
-                              name="phone"
-                              type="phone"
-                              fullWidth
-                              variant="outlined"
-                              size="small"
-                              margin="none"
-                              required
-                              sx={{mt: 1}}
-                              />
-                            </Box>
-                            <Box>
-                              <label htmlFor="company">Company</label>
-                              <TextField
-                              name="company"
-                              type="company"
-                              fullWidth
-                              variant="outlined"
-                              size="small"
-                              margin="none"
-                              required
-                              sx={{mt: 1}}
-                              />
-                            </Box>
-                            <Box>
-                              <label htmlFor="message">Message</label>
-                              <TextField
-                              label="Message"
-                              name="message"
-                              multiline
-                              rows={4}
-                              fullWidth
-                              variant="outlined"
-                              size="small"
-                              margin="none"
-                              sx={{mt: 1}}
-                              />
-                            </Box>
-                          </Stack>
+
+                        <Formik
+                          initialValues={{ name: '', email: '', phone: '', company: '', message: '' }}
+                          validationSchema={validationSchema}
+                          // onSubmit={handleSubmit}
+                          onSubmit={(values, { setValues }) => {
+                            const capitalizedValues = {
+                              ...values,
+                              name: values.name.charAt(0).toUpperCase().trim() + values.name.slice(1).trim(),
+                              phone: values.phone.charAt(0) !== '0' && values.phone.charAt(0) === '8' ? '+62' + values.phone : '+62' + values.phone.slice(1),
+                              message: values.message.trim(),
+                              
+                            };
+
+                            console.log(capitalizedValues);
+                                                        
+                            // Reset the form values
+                            setValues({
+                              name: '',
+                              email: '',
+                              phone: '',
+                              company: '',
+                              message: '',
+                            });
+                          }}
+                        >
+                          <Form>
+                            <Stack spacing={5}>
+                              <Box>
+                                <label htmlFor="name">Name</label>
+                                <Field as={TextField}
+                                name="name"
+                                type="name"
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                margin="none"
+                                sx={{mt: 1}}
+                                />
+                                <ErrorMessage className={styles.errorMessage} name="name" component="span" />
+                              </Box>
+                              <Box>
+                                <label htmlFor="email">Email Address</label>
+                                <Field as={TextField}
+                                name="email"
+                                type="text"
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                margin="none"
+                                sx={{mt: 1}}
+                                />
+                                <ErrorMessage className={styles.errorMessage} name="email" component="span" />
+                              </Box>
+                              <Box>
+                                <label htmlFor="phone">Phone</label>
+                                <Field as={TextField}
+                                name="phone"
+                                type="phone"
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                margin="none"
+                                sx={{mt: 1}}
+                                />
+                              <ErrorMessage className={styles.errorMessage} name="phone" component="span" />
+                              </Box>
+                              <Box>
+                                <label htmlFor="company">Company</label>
+                                <Field as={TextField}
+                                name="company"
+                                type="company"
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                margin="none"
+                                sx={{mt: 1}}
+                                />
+                                <ErrorMessage className={styles.errorMessage} name="company" component="span" />
+                              </Box>
+                              <Box>
+                                <label htmlFor="message">Message</label>
+                                <Field as={TextField}
+                                label="Message"
+                                name="message"
+                                multiline
+                                rows={4}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                margin="none"
+                                sx={{mt: 1}}
+                                />
+                                <ErrorMessage className={styles.errorMessage} name="message" component="span" />
+                              </Box>
+                            </Stack>
                             <Button variant="contained" type='submit'
-                                sx={{
-                                    backgroundColor: '#0cebeb',
-                                    backgroundImage: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
-                                    mt: {xs: 3, md: 5},
-                                    fontSize: '1rem',
-                                    fontWeight: '500',
-                                    textTransform: 'capitalize',
-                                    color: 'common.white',
-                                    padding: '10px 0',
-                                    minWidth: {xs: '100%', md: '170px'},
-                                }}
+                              sx={{
+                                  backgroundColor: '#0cebeb',
+                                  backgroundImage: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
+                                  mt: {xs: 3, md: 5},
+                                  fontSize: '1rem',
+                                  fontWeight: '500',
+                                  textTransform: 'capitalize',
+                                  color: 'common.white',
+                                  padding: '10px 0',
+                                  minWidth: {xs: '100%', md: '170px'},
+                              }}
                             >Submit</Button>
-                            
-                        </form>
+                          </Form>
+                        </Formik>
                     </Box>
                   </Grid>
                 </Grid>
               </Box>
           </Container>
     )
-};
+}
