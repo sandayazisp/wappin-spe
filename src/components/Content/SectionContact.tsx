@@ -23,7 +23,7 @@ export default function SectionContact() {
     message: Yup.string().required('Message is required')
     .test('no-html', 'HTML tags are not allowed', (value) => {
       if (value) {
-        const regex = /<[^>]+>/g;
+        const regex = /((?=(a+))\2)+$/;
         return !regex.test(value);
       }
       return true;
